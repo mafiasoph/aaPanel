@@ -1,6 +1,6 @@
 #! /bin/bash
 # By Aaron
-# https://github.com/AaronYES/aaPanel
+# https://github.com/mafiasoph/aaPanel
 
 #彩色
 red(){
@@ -35,11 +35,11 @@ bash "/root/bt-install.sh"
 
 # 降级aapanel GitHub下载 (最后一个无广告版本)
 function downgrade-aapanel(){
-wget -O "/root/LinuxPanel_EN-6.8.23.zip" "https://gh-proxy.com/https://github.com/AaronYES/aapanel/releases/download/1.0/LinuxPanel_EN-6.8.23.zip"
+wget -O "/root/LinuxPanel_EN-6.8.23.zip" "https://gh-proxy.com/https://github.com/mafiasoph/aapanel/releases/download/1.0/LinuxPanel_EN-6.8.23.zip"
 red "Download complete, downgrading."
 unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
-wget -O "/root/panel/downgrade.sh" "https://gh-proxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/script/downgrade.sh" 
+wget -O "/root/panel/downgrade.sh" "https://gh-proxy.com/https://raw.githubusercontent.com/mafiasoph/aapanel/main/script/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "Downgrade succeeded."
 rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
@@ -47,7 +47,7 @@ rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 
 ## 降级宝塔面板
 function downgrade-bt(){
-wget -O "/root/LinuxPanel-7.7.0.zip" "https://gh-proxy.com/https://github.com/AaronYES/aaPanel/releases/download/1.3/LinuxPanel-7.7.0.zip"
+wget -O "/root/LinuxPanel-7.7.0.zip" "https://gh-proxy.com/https://github.com/mafiasoph/aaPanel/releases/download/1.3/LinuxPanel-7.7.0.zip"
 blue "Download complete, downgrading."
 unzip LinuxPanel-7.7.0.zip
 cd /root/panel
@@ -68,7 +68,7 @@ chattr +i /www/server/panel/data/plugin.json
 chattr -i /www/server/panel/data/repair.json
 rm /www/server/panel/data/repair.json
 cd /www/server/panel/data
-wget https://gh-proxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/resource/repair.json
+wget https://gh-proxy.com/https://raw.githubusercontent.com/mafiasoph/aaPanel/main/resource/repair.json
 chattr +i /www/server/panel/data/repair.json
 red "cracked successfully."
 }
@@ -97,7 +97,7 @@ chattr +i -R /www/server/panel/logs/request
 
 function sinicization-gacjie(){
 # 汉化 来自 https://gitee.com/gacjie/aapanel_chinese 
-wget -O /root/chinese.zip https://gh-proxy.com/https://github.com/AaronYES/aaPanel/releases/download/1.2/aapanel_chinese-6.8.21.zip
+wget -O /root/chinese.zip https://gh-proxy.com/https://github.com/mafiasoph/aaPanel/releases/download/1.2/aapanel_chinese-6.8.21.zip
 unzip -o /root/chinese.zip -d /www/server/
 rm /root/chinese.zip -rf
 /etc/init.d/bt restart
@@ -108,7 +108,7 @@ red "success."
 function start_menu(){
     clear
     purple " Thank you for using the aaPanel tool."
-    purple " https://github.com/AaronYES/aaPanel"
+    purple " https://github.com/mafiasoph/aaPanel"
     yellow " ————————————————————————————————————————————————"
     green " 1. Install aaPanel on CentOS/Debian/Ubuntu"
     green " 2. Install BTPanel on CentOS/Debian/Ubuntu"
